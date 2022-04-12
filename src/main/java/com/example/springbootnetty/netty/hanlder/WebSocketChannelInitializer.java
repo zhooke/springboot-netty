@@ -1,4 +1,4 @@
-package com.example.springbootnetty.hanlder;
+package com.example.springbootnetty.netty.hanlder;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

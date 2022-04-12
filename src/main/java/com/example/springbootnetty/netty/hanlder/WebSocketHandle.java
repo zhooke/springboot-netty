@@ -1,4 +1,4 @@
-package com.example.springbootnetty.hanlder;
+package com.example.springbootnetty.netty.hanlder;
 
 import cn.hutool.core.date.DateUtil;
 import io.netty.channel.Channel;

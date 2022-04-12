@@ -1,6 +1,6 @@
-package com.example.springbootnetty.service;
+package com.example.springbootnetty.netty.service;
 
-import com.example.springbootnetty.hanlder.WebSocketChannelInitializer;
+import com.example.springbootnetty.netty.hanlder.WebSocketChannelInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;

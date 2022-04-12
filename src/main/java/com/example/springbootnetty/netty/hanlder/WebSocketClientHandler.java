@@ -35,7 +35,7 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-package com.example.springbootnetty.hanlder;
+package com.example.springbootnetty.netty.hanlder;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.http.FullHttpResponse;

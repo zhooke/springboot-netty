@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package com.example.springbootnetty.client;
+package com.example.springbootnetty.netty.client;
 
 import cn.hutool.core.date.DateUtil;
-import com.example.springbootnetty.hanlder.WebSocketClientHandler;
+import com.example.springbootnetty.netty.hanlder.WebSocketClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
