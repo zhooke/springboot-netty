@@ -15,6 +15,7 @@
  */
 package com.example.springbootnetty.client;
 
+import cn.hutool.core.date.DateUtil;
 import com.example.springbootnetty.hanlder.WebSocketClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -57,7 +58,8 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class WebsocketClient {
 
-    private String url = "wss:/localhost/webSocketServer";
+    //    private String url = "wss:/localhost/webSocketServer";
+    private String url = "ws://localhost:8899/ws";
 
     private Channel channel;
 
@@ -132,16 +134,17 @@ public class WebsocketClient {
             channel.writeAndFlush("发送的第一条消息");
             // 在这里可以添加一个默认心跳 15s发一次
             channel.eventLoop().scheduleAtFixedRate(() -> {
+                log.info("客户端发送心跳，当前时间：{}", DateUtil.date());
                 channel.writeAndFlush(new TextWebSocketFrame("pong"));
             }, 0, 15, TimeUnit.SECONDS);
 
             //如果下面代码，则main方法所在的线程，即主线程会在执行完bind().sync()方法后，会进入finally 代码块，之前的启动的nettyserver也会随之关闭掉，整个程序都结束了
-            channel.closeFuture().sync();
+//            channel.closeFuture().sync();
         } catch (Exception e) {
             channel.close();
             log.error("websocket client 启动失败，失败原因：{}", e.getMessage());
         } finally {
-            group.shutdownGracefully();
+//            group.shutdownGracefully();
         }
     }
 }
